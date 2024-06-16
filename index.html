@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILONGA TC PRE-NATIONAL RESULTS 2024</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="images/ilonga.png" alt="ILONGA TC Logo" class="logo">
+            <h1>ILONGA TC</h1>
+            <H2>Candidate's Index Number 2024</H2>
+        </header>
+
+        <div class="search-container">
+            <label for="examNumber">Enter Exam Number:</label>
+            <input type="text" id="examNumber" placeholder="E0514/XXXX">
+            <button onclick="searchResults()">
+                <span id="search-icon">🔍</span>
+                <span id="searching" class="hidden">Searching...</span>
+            </button>
+            <h6>Created by Samwel Adona</h6>
+        </div>
+        
+        <div id="result" class="hidden">
+            <div class="result-content">
+                <table id="resultTable">
+                    <tr>
+                        <th>Exam Number</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Class</th>
+                    </tr>
+                </table>
+                <button onclick="saveAsPDF()">Save as PDF</button>
+                <button onclick="copyResults()">Copy Results</button>
+            </div>
+        </div>
+
+        <div id="error-message" class="hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
