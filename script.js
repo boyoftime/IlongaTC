@@ -14084,7 +14084,7 @@ function downloadPDF(student) {
     logo.src = 'ilonga.png';
     logo.onload = function() {
         // Add the logo
-        doc.addImage(logo, 'PNG', 80, 10, 50, 50); // Adjust as needed
+        doc.addImage(logo, 'PNG', 80, 20, 50, 50); // Adjust as needed
 
         // Add the title
         doc.setFontSize(18);
@@ -14098,7 +14098,7 @@ function downloadPDF(student) {
             body: tableData,
             theme: 'striped',
             headStyles: { fillColor: [76, 175, 80] },
-            styles: { fontSize: 10, cellPadding: 3 }
+            styles: { fontSize: 9, cellPadding: 2 }
         });
 
         // Save the PDF
