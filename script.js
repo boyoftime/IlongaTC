@@ -14042,38 +14042,59 @@ const studentResults = [
   ];
   
   function searchResults() {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'block'; // Show the loader
+
     const examNumber = document.getElementById('examNumber').value;
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '';
 
     const student = studentResults.find(student => student['EXAM NO.'] === examNumber);
 
-    if (student) {
-        const table = document.createElement('table');
-        const tbody = document.createElement('tbody');
+    setTimeout(() => { // Simulate a delay for demonstration purposes
+        if (student) {
+            const table = document.createElement('table');
+            const tbody = document.createElement('tbody');
 
-        for (const [key, value] of Object.entries(student)) {
-            const row = document.createElement('tr');
-            const cellKey = document.createElement('th');
-            const cellValue = document.createElement('td');
-            cellKey.textContent = key;
-            cellValue.textContent = value;
-            row.appendChild(cellKey);
-            row.appendChild(cellValue);
-            tbody.appendChild(row);
+            for (const [key, value] of Object.entries(student)) {
+                const row = document.createElement('tr');
+                const cellKey = document.createElement('th');
+                const cellValue = document.createElement('td');
+                cellKey.textContent = key;
+                cellValue.textContent = value;
+                row.appendChild(cellKey);
+                row.appendChild(cellValue);
+                tbody.appendChild(row);
+            }
+
+            table.appendChild(tbody);
+            resultDiv.appendChild(table);
+
+            const downloadButton = document.createElement('button');
+            downloadButton.textContent = 'Download as PDF';
+            downloadButton.onclick = () => downloadPDF(student);
+            resultDiv.appendChild(downloadButton);
+        } else {
+            showPopup("Please enter correct exam number");
         }
 
-        table.appendChild(tbody);
-        resultDiv.appendChild(table);
-
-        const downloadButton = document.createElement('button');
-        downloadButton.textContent = 'Download as PDF';
-        downloadButton.onclick = () => downloadPDF(student);
-        resultDiv.appendChild(downloadButton);
-    } else {
-        resultDiv.textContent = 'No results found.';
-    }
+        loader.style.display = 'none'; // Hide the loader when results are displayed
+    }, 2000); // Simulate a 2 second delay
 }
+
+function showPopup(message) {
+    const popup = document.getElementById('popup');
+    const popupMessage = document.getElementById('popup-message');
+    popupMessage.textContent = message;
+    popup.style.display = 'flex';
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
+}
+
+
 
 function downloadPDF(student) {
     const { jsPDF } = window.jspdf;
