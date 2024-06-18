@@ -15,15 +15,17 @@
 </head>
 <body>
     <header class="roboto-bold">
+        <div class="header-background"></div>
         <img src="ilonga.png" alt="ILONGA TC Logo" class="logo">
         <h1>ILONGA TC PRE-NATIONAL RESULTS 2024</h1>
     </header>
 
-    <main>
-        <div class="search-section roboto-regular">             
-             <p>Please enter your examination number below and click search to see your results.</p>
+    <main><h2>Please fill your examination number below to see the results.</h2>
+        <div class="search-section roboto-regular"> 
             <input type="text" id="examNumber" placeholder="Enter Exam Number" value="E0514/0001" >
-            <button onclick="searchResults()">Search</button>
+            <button onclick="searchResults()">&#128269;Search</button>
+            <div class="loader" id="loader" style="display: none;"></div>
+
         </div>
         <div id="result" class="results roboto-regular"></div>
     </main>
@@ -33,5 +35,13 @@
         <p>Created by Samwel Adonia.</p>
         <button onclick="contactSam()">Contact Samwel</button>
     </footer>
+
+    <div id="popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p id="popup-message" class="popup-message"></p>
+        </div>
+    </div>
+    
 </body>
 </html>
