@@ -5,43 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ILONGA TC PRE-NATIONAL RESULTS 2024</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.17/jspdf.plugin.autotable.min.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="ilonga.png" alt="ILONGA TC Logo" class="logo">
-            <h1>ILONGA TC</h1>
-            <H2>Candidate's Necta Index Number 2024</H2>
-        </header>
+    <header class="roboto-bold">
+        <img src="ilonga.png" alt="ILONGA TC Logo" class="logo">
+        <h1>ILONGA TC PRE-NATIONAL RESULTS 2024</h1>
+    </header>
 
-        <div class="search-container">
-            <label for="examNumber">Enter Exam Number:</label>
-            <input type="text" id="examNumber" placeholder="E0514/XXXX" value="E0514/0001">
-            <button onclick="searchResults()">
-                <span id="search-icon">Search🔍</span>
-                <span id="searching" class="hidden">Searching...</span>
-            </button>
-            <h6>Created by Samwel Adonia</h6>
+    <main>
+        <div class="search-section roboto-regular">
+            <input type="text" id="examNumber" placeholder="Enter Exam Number">
+            <button onclick="searchResults()">Search</button>
         </div>
-        
-        <div id="result" class="hidden">
-            <div class="result-content">
-                <table id="resultTable">
-                    <tr>
-                        <th>Exam Number</th>
-                        <th>Name</th>
-                        <th>Gender</th>
-                        <th>Class</th>
-                    </tr>
-                </table>
-                <button onclick="saveAsPDF()">Save as PDF</button>
-                <button onclick="copyResults()">Copy Results</button>
-            </div>
-        </div>
+        <div id="result" class="results roboto-regular"></div>
+    </main>
 
-        <div id="error-message" class="hidden"></div>
-    </div>
-
-    <script src="script.js"></script>
+    <footer class="roboto-light">
+        <p>&copy; 2024 ILONGA TC. Webpage created by Samwel Adonia.</p>
+        <button onclick="contactSam()">Contact Sam</button>
+    </footer>
 </body>
 </html>
