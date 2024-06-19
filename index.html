@@ -19,12 +19,12 @@
         <h1>ILONGA TC PRE-NATIONAL RESULTS 2024</h1>
     </header>
 
-    <main><h2>Please fill your examination number below to see the results.</h2>
-        <div class="search-section roboto-regular"> 
-            <input type="text" id="examNumber" placeholder="Enter Exam Number" value="E0514/0001" >
-            <button onclick="searchResults()">&#128269;Search</button>
+    <main>
+        <div class="search-section roboto-regular">
+            <p>Please fill in the correct exam number to find the results.</p> <!-- Added message -->
+            <input type="text" id="examNumber" placeholder="Enter Exam Number" value="E0514/0001"><br>
+            <button onclick="searchResults()">&#128269;Search</button><br>
             <div class="loader" id="loader" style="display: none;"></div>
-
         </div>
         <div id="result" class="results roboto-regular"></div>
     </main>
