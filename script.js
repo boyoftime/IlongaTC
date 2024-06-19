@@ -14072,10 +14072,17 @@ const studentResults = [
 
             const downloadButton = document.createElement('button');
             downloadButton.textContent = 'Download as PDF';
-            downloadButton.onclick = () => downloadPDF(student);
+            downloadButton.className = 'download-button';
+            downloadButton.onclick = () => {
+                showLoadingAnimation(downloadButton);
+                setTimeout(() => {
+                    downloadPDF(student);
+                    hideLoadingAnimation(downloadButton, 'Download as PDF');
+                }, 2000); // Simulate a 2-second delay for the loading animation
+            };
             resultDiv.appendChild(downloadButton);
         } else {
-            showPopup("Please enter correct exam number");
+            showPopup("No results found.");
         }
 
         loader.style.display = 'none'; // Hide the loader when results are displayed
@@ -14094,7 +14101,16 @@ function closePopup() {
     popup.style.display = 'none';
 }
 
+function showLoadingAnimation(button) {
+    button.innerHTML = ''; // Clear the button content
+    const spinner = document.createElement('div');
+    spinner.className = 'loading';
+    button.appendChild(spinner);
+}
 
+function hideLoadingAnimation(button, originalText) {
+    button.innerHTML = originalText; // Restore the original text
+}
 
 function downloadPDF(student) {
     const { jsPDF } = window.jspdf;
@@ -14129,4 +14145,4 @@ function downloadPDF(student) {
 
 function contactSam() {
     window.open('tel:+255674100576');
-}
+  }
