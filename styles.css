@@ -9,13 +9,13 @@ body {
 
 header {
     text-align: center;
-    background-color: #4CAF50;
+    background-color: #06676d;
     padding: 20px;
     color: white;
 }
 
 .logo {
-    max-width: 100px;
+    max-width: 300px;
 }
 
 main {
@@ -39,17 +39,18 @@ input, button {
     padding: 10px;
     margin: 5px;
     font-size: 16px;
+    font-weight: bold;
     width: 100%; /* Full width for better mobile experience */
     box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .loader {
-    border: 4px solid #f3f3f3; /* Light grey */
-    border-top: 4px solid #3498db; /* Blue */
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid #3498db; /* Blue */
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    animation: spin 2s linear infinite;
+    animation: spin 0.5s linear infinite;
     margin-top: 10px; /* Space between button and loader */
 }
 
@@ -72,12 +73,14 @@ input, button {
 }
 
 .results th, .results td {
-    border: 1px solid #ddd;
+    border: 1px solid #999896;
     padding: 8px;
+    border-width: 2px;
+    border-style: solid;
 }
 
 .results th {
-    background-color: #4CAF50;
+    background-color: #59441b;
     color: white;
 }
 
@@ -213,4 +216,3 @@ footer button {
     font-weight: bold;
     cursor: pointer;
 }
-
