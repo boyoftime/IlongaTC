@@ -14118,7 +14118,7 @@ function downloadPDF(student) {
 
     // Load the logo image
     const logo = new Image();
-    logo.src = 'ilonga.png';
+    logo.src = 'logo/ilonga.png';
     logo.onload = function() {
         // Add the logo
         doc.addImage(logo, 'PNG', 80, 20, 50, 50); // Adjust as needed
